@@ -1,6 +1,7 @@
 #http://quantstart.com/articles/QR-Decomposition-with-Python-and-NumPy
 from math import sqrt
 from pprint import pprint
+import numpy
 
 def mult_matrix(M, N):
 	"""Multiply square matrices of same dimension M and N"""
@@ -60,10 +61,14 @@ if __name__ == "__main__":
 	Q, R = householder(A)
 
 	print "A:"
-	pprint(A)
+	pprint(numpy.asarray(A))
 
 	print "Q:"
-	pprint(Q)
+	pprint(numpy.asarray(Q))
 		
 	print "R:"
-	pprint(R)
+	pprint(numpy.asarray(R))
+
+
+	print "QR:"
+	pprint(numpy.asarray(Q)*numpy.asarray(R))
