@@ -20,7 +20,7 @@ def pivot_matrix(M):
 	# each column of M is placed on the diagonal of of M
 
 	for j in xrange(m):
-		row = max(xrange(j, m), key=lambda i : M[i][j])
+		row = max(xrange(j, m), key=lambda i : abs(M[i][j]))
 		if j != row:
 			# swap the rows
 			id_mat[j], id_mat[row] = id_mat[row], id_mat[j]
@@ -57,7 +57,7 @@ def lu_decomposition(A):
 
 
 if __name__ == "__main__":
-	A = [[7, 3, -1, 2], [3, 8, 1, -4], [-1, 1, 4, -1], [2, -4, -1, 6]]
+	A = [[7, 3, -1, 2], [3, -8, 1, -4], [-1, 1, 4, -1], [2, -4, -1, 6]]
 	P, L, U = lu_decomposition(A)
 	print "A:"
 	pprint.pprint(A)
