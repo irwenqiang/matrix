@@ -1,7 +1,8 @@
 #http://quantstart.com/articles/Cholesky-Decomposition-in-Python-and-NumPy
 
 from math import sqrt
-from pprint import pprint
+import pprint
+import numpy
 
 def cholesky(A):
 	"""
@@ -32,9 +33,9 @@ if __name__ == "__main__":
 	A = [[6, 3, 4, 8], [3, 6, 5, 1], [4, 5, 10, 7], [8, 1, 7, 25]]
 	L = cholesky(A)
 	print "A:"
-	pprint(A)
+	pprint.pprint(numpy.asarray(A))
 
 	print "L:"
-	pprint(L)
+	pprint.pprint(numpy.asarray(L))
 
 	
